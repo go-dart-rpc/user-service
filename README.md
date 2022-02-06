@@ -30,12 +30,12 @@ grpcurl -plaintext localhost:50051 proto.UserService.ListUser
 ```
 
 
-Updaye
+Update
 ```
 grpcurl -plaintext -d '{"user":{"id":"61ff591f128f597086ac0c4c","firstName":"Bob","lastName":"Marley","email":"dontworry@be.happy","gender":"M"}}' localhost:50051 proto.UserService.UpdateUser
 ```
 
 Delete
 ```
-grpcurl -plaintext -d '{"userId":"61ff591f128f597086ac0c4c"}' localhost:50051 proto.UserService.DeleteUser
+grpcurl -plaintext -d '{"userId":"61ff5de24f01624d063397c3"}' localhost:50051 proto.UserService.DeleteUser
 ```

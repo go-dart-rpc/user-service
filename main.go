@@ -56,6 +56,14 @@ func (*server) CreateUser(ctx context.Context, req *proto.CreateUserRequest) (*p
 		Gender:    user.GetGender(),
 	}
 
+	collection.Indexes().CreateOne(
+		context.Background(),
+		mongo.IndexModel{
+			Keys:    bson.D{{Key: "email", Value: 1}},
+			Options: options.Index().SetUnique(true),
+		},
+	)
+
 	res, err := collection.InsertOne(ctx, data)
 	if err != nil {
 		return nil, status.Errorf(
