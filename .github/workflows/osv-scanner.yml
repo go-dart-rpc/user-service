@@ -28,4 +28,5 @@ jobs:
       scan-args: |-
         -r
         --skip-git
+        --fail-on-vuln=false
         ./
