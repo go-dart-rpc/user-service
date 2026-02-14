@@ -1,0 +1,16 @@
+# CODEOWNERS file for user-service repository
+# This file defines individuals or teams that are responsible for code in the repository.
+# Code owners are automatically requested for review when someone opens a pull request that modifies code that they own.
+
+# Default owners for everything in the repo
+* @dduzgun-security
+
+# GitHub Actions workflows
+/.github/ @dduzgun-security
+
+# Go code
+*.go @dduzgun-security
+
+# Dependencies
+go.mod @dduzgun-security
+go.sum @dduzgun-security

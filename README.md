@@ -1,6 +1,12 @@
 # user-service
 
-How to run
+A gRPC-based user service built with Go and MongoDB.
+
+## Security
+
+This repository follows security best practices and has automated security scanning enabled. See [SECURITY.md](SECURITY.md) for details.
+
+## How to run
 ```
 go run main.go
 ```
@@ -39,3 +45,26 @@ Delete
 ```
 grpcurl -plaintext -d '{"userId":"61ff5de24f01624d063397c3"}' localhost:50051 proto.UserService.DeleteUser
 ```
+
+## Repository Settings Required
+
+The following security settings should be configured by a repository administrator:
+
+### 1. Branch Protection
+Navigate to Settings → Branches → Branch protection rules and configure:
+- ✅ Require pull request reviews before merging
+- ✅ Require status checks to pass before merging
+- ✅ Require signed commits
+- ✅ Include administrators
+
+### 2. GitHub Advanced Security
+Navigate to Settings → Code security and analysis and enable:
+- ✅ Code scanning (CodeQL analysis)
+- ✅ Secret scanning
+- ✅ Dependency review
+
+### 3. Security Features
+- ✅ Dependabot alerts (already enabled)
+- ✅ Dependabot security updates (already enabled)
+
+These settings are required to fully comply with SLSA v1.2-rc2 security requirements.
